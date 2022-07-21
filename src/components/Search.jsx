@@ -13,13 +13,11 @@ const Search = ({ onSearchChange }) => {
   const loadOptions = (inputValue) =>
     fetch(`${GEO_API_URL}/cities?namePrefix=${inputValue}`, GEO_API_OPTIONS)
       .then((response) => response.json())
-      .then((response) => ({
-        options: response.data.map(
-          ({ name, latitude, longitude, countryCode }) => ({
-            value: `${latitude} ${longitude}`,
-            label: `${name}, ${countryCode}`,
-          })
-        ),
+      .then(({ data }) => ({
+        options: data.map(({ name, latitude, longitude, countryCode }) => ({
+          value: `${latitude} ${longitude}`,
+          label: `${name}, ${countryCode}`,
+        })),
       }))
       .catch((err) => console.error(err));
 
