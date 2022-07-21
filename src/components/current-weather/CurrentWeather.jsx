@@ -16,14 +16,14 @@ const CurrentWeather = ({ weatherData }) => {
         <img src={`icons/${icon}.png`} alt="weather" className="waether-icon" />
       </div>
       <div className="bottom">
-        <p className="temperature">{`${Math.round(temp)}°C`}</p>
+        <p className="temperature">{Math.round(temp)}°C</p>
         <div className="details">
           <div className="parameter-row">
             <span className="parameter-label">More Details</span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Feels like</span>
-            <span className="parameter-Value">{`${feels_like}°C`}</span>
+            <span className="parameter-Value">{feels_like}°C</span>
           </div>
           <div className="parameter-row">
             <span className="parameter-label">Wind</span>
