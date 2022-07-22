@@ -18,7 +18,7 @@ const ForecastWeather = ({ forecastData }) => {
     "Sunday",
   ];
 
-  const presentDay = 0;
+  const presentDay = new Date().getDay();
   const forecastDays = WEEK_DAYS.slice(presentDay).concat(WEEK_DAYS);
 
   return (
